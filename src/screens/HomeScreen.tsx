@@ -3,6 +3,7 @@ import { View, StyleSheet, Alert, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SearchInput } from '../components/SearchInput';
 import { WeatherCard } from '../components/WeatherCard';
+import { ApiDebugComponent } from '../components/ApiDebugComponent';
 import { WeatherService } from '../services/weatherApi';
 import { StorageService } from '../services/storage';
 import { WeatherData } from '../types/weather';
@@ -34,6 +35,7 @@ export const HomeScreen: React.FC = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <SearchInput onSearch={handleSearch} loading={loading} />
         {weatherData && <WeatherCard data={weatherData} />}
+        <ApiDebugComponent />
       </ScrollView>
     </SafeAreaView>
   );
